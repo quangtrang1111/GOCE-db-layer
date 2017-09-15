@@ -20,10 +20,10 @@ namespace CO._2CS.GOCE.Platform.DatabaseLayer.Contexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<GeoEvent>()
-            //    .HasRequired(ge => ge.OriginalGeoEvent)
-            //    .WithRequiredDependent()
-            //    .Map(config => config.MapKey("OriginalID"));
+            modelBuilder.Entity<GeoEvent>()
+                .HasRequired(ge => ge.OriginalGeoEvent)
+                .WithRequiredDependent()
+                .Map(config => config.MapKey("OriginalID"));
 
             modelBuilder.Entity<EventType>().ToTable("EventType", SCHEMA_NAME);
             modelBuilder.Entity<GeoEvent>().ToTable("GeoEvent", SCHEMA_NAME);

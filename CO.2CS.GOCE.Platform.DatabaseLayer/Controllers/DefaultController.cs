@@ -26,18 +26,15 @@ namespace CO._2CS.GOCE.Platform.DatabaseLayer.Controllers
                 EndTime = date,
                 CreationTime = date,
                 CreatedByID = id,
-                //GeoRef = DbGeography.PointFromText(
-                //       string.Format("POINT({0} {1})", -121.527200, 45.712113),
-                //        4326
-                //    ),
+                GeoRef = DbGeography.PointFromText(
+                       string.Format("POINT({0} {1})", -121.527200, 45.712113),
+                        4326
+                    ),
                 EventTypeID = Guid.Parse("C71CCE5D-8B98-4572-5254-08D4FA5EC9BE"),
                 IsCurrent = true,
                 IsDeleted = false,
-                OrginalID = id,
-                Attributes = "",
-                //OrginalID = null,
-                //EventTypeID = null,
-                ////GeoRef = null
+                OrginalID = Guid.Parse("641D1C3A-6247-40CB-BAC7-F6FAA1B1B143"),
+                Attributes = ""
             });
             db.EventType.Add(new Models.EventType
             {
