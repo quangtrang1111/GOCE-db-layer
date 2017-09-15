@@ -19,24 +19,26 @@ namespace CO._2CS.GOCE.Platform.DatabaseLayer.Controllers
         {
             var id = Guid.NewGuid();
 
-            //db.GeoEvent.Add(new Models.GeoEvent
-            //{
-            //    ID = id,
-            //    StartTime = DateTimeOffset.Now,
-            //    EndTime = DateTimeOffset.Now,
-            //    CreationTime = DateTimeOffset.Now,
-            //    CreatedByID = Guid.NewGuid(),
-            //    GeoRef = DbGeography.PointFromText(
-            //            string.Format("POINT({0} {1})", -121.527200, 45.712113),
-            //            4326
-            //        ),
-            //    EventTypeID = Guid.Parse("C71CCE5D-8B98-4572-5254-08D4FA5EC9BE"),
-            //    IsCurrent = true,
-            //    IsDeleted = false,
-            //    OrginalID = id,
-            //});
+            db.GeoEvent.Add(new Models.GeoEvent
+            {
+                ID = id,
+                StartTime = DateTimeOffset.Now,
+                EndTime = DateTimeOffset.Now,
+                CreationTime = DateTimeOffset.Now,
+                CreatedByID = Guid.NewGuid(),
+                GeoRef = DbGeography.PointFromText(
+                        string.Format("POINT({0} {1})", -121.527200, 45.712113),
+                        4326
+                    ),
+                EventTypeID = Guid.Parse("C71CCE5D-8B98-4572-5254-08D4FA5EC9BE"),
+                IsCurrent = true,
+                IsDeleted = false,
+                OrginalID = id,
+            });
 
-            return new string[] { db.EventType.Count().ToString() };
+            db.SaveChanges();
+            var test = db.GeoEvent.Count().ToString();
+            return new string[] { test };
         }
 
         // GET: api/Default/5
