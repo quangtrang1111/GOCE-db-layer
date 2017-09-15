@@ -5,7 +5,7 @@ namespace CO._2CS.GOCE.Platform.DatabaseLayer.Models
 {
     public class GeoEvent
     {
-        internal GeoEvent OriginalGeoEvent { get; private set; }
+        //internal GeoEvent OriginalGeoEvent { get; private set; }
 
         public Guid ID { get; set; }
 
@@ -13,7 +13,7 @@ namespace CO._2CS.GOCE.Platform.DatabaseLayer.Models
 
         public DateTimeOffset EndTime { get; set; }
 
-        public DbGeography GeoRef { get; set; }
+        //public DbGeography GeoRef { get; set; }
 
         public Guid OrginalID { get; set; }
 
